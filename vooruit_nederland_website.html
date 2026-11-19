@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f4e7a5">
+<title>Vooruit Nederland | Vandaag veranderen, morgen verbeteren</title>
+<style>
+:root{
+  --butter:#f4e7a5; --butter-deep:#ead783; --ink:#22231f; --muted:#66675f;
+  --paper:#fffefa; --white:#fff; --line:#e9e5d7; --green:#405b45;
+  --serif:Georgia,"Times New Roman",serif;
+  --sans:Arial,Helvetica,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.65}
+a{color:inherit}
+.topline{height:7px;background:var(--butter)}
+header{position:sticky;top:0;z-index:20;background:rgba(255,254,250,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{max-width:1180px;margin:auto;padding:15px 28px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;min-width:220px}
+.logo{width:42px;height:42px;border-radius:50%;background:var(--butter);display:grid;place-items:center;font-family:var(--serif);font-weight:bold;font-size:18px;letter-spacing:-2px;border:1px solid #e5d58e}
+.brand strong{display:block;font-size:15px;letter-spacing:.09em;text-transform:uppercase}
+.brand small{display:block;color:var(--muted);font-size:10px;letter-spacing:.13em;text-transform:uppercase}
+nav{display:flex;align-items:center;gap:23px}
+nav a{text-decoration:none;font-size:13px;font-weight:700;color:#44463f}
+nav a:hover{color:var(--green)}
+.nav-cta,.button{background:var(--ink);color:white!important;text-decoration:none;padding:11px 17px;border-radius:3px;font-size:12px;font-weight:700;letter-spacing:.03em}
+.menu-btn{display:none;border:1px solid var(--line);background:white;padding:8px 11px;font-size:20px}
+.hero{background:var(--butter);overflow:hidden}
+.hero-inner{max-width:1180px;margin:auto;padding:92px 28px 88px;display:grid;grid-template-columns:1.2fr .8fr;gap:50px;align-items:center}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:.17em;text-transform:uppercase;color:#56533f}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.08}
+h1{font-size:clamp(48px,6.7vw,86px);letter-spacing:-.055em;margin:20px 0 22px;max-width:730px}
+.hero p{font-size:18px;max-width:610px;color:#444438;margin:0 0 30px}
+.hero-actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.button.light{background:transparent;color:var(--ink)!important;border:1px solid rgba(34,35,31,.4)}
+.hero-art{min-height:330px;position:relative;display:grid;place-items:center}
+.sun{width:270px;height:270px;border-radius:50%;background:#fff9df;position:absolute;top:16px;right:8%;box-shadow:0 0 0 1px rgba(130,111,51,.12)}
+.sun:after{content:"";position:absolute;left:-35px;right:-35px;bottom:0;height:125px;background:var(--butter);border-radius:50% 50% 0 0}
+.horizon{position:absolute;bottom:30px;left:0;right:0;height:130px;border-bottom:2px solid #746c4c}
+.horizon:before,.horizon:after{content:"";position:absolute;bottom:0;width:45%;height:95px;border:2px solid #746c4c;border-bottom:0;border-radius:100% 100% 0 0}
+.horizon:before{left:0}.horizon:after{right:0}
+.people{position:absolute;bottom:29px;left:50%;transform:translateX(-50%);display:flex;align-items:end;gap:17px}
+.person{position:relative;width:24px;height:86px;border-radius:14px 14px 3px 3px;background:var(--green)}
+.person:before{content:"";position:absolute;width:24px;height:24px;border-radius:50%;background:#746c4c;top:-29px;left:0}
+.person:nth-child(2){height:112px;width:28px;background:#fffefa}.person:nth-child(2):before{width:26px;height:26px;top:-31px}
+.person:nth-child(3){height:74px;background:#746c4c}
+.art-label{position:absolute;bottom:0;right:0;font-family:var(--serif);font-size:13px;font-style:italic}
+section{scroll-margin-top:82px}
+.wrap{max-width:1120px;margin:auto;padding:88px 28px}
+.section-head{max-width:700px;margin-bottom:42px}
+.section-head .eyebrow{color:var(--green)}
+h2{font-size:clamp(36px,4.2vw,54px);letter-spacing:-.04em;margin:12px 0 18px}
+.lead{font-family:var(--serif);font-size:22px;line-height:1.45;color:#4b4b43}
+.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start}
+.intro-copy p{margin-top:0;color:#55564e}
+.pullquote{padding:30px 32px;background:#f7f3e6;border-left:4px solid var(--butter-deep);font-family:var(--serif);font-size:27px;line-height:1.3}
+.values{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:38px}
+.value{background:#f8f5eb;padding:20px 15px;text-align:center;font-family:var(--serif);font-size:19px}
+.value span{display:block;font-family:var(--sans);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:7px}
+.tint{background:#f7f4e9}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.card{background:white;padding:30px;border:1px solid var(--line);min-height:230px;display:flex;flex-direction:column;align-items:flex-start}
+.card-num{font-size:11px;letter-spacing:.15em;color:var(--green);font-weight:700}
+.card h3{font-size:30px;margin:15px 0 10px}
+.card p{color:var(--muted);margin:0 0 20px}
+.text-link{margin-top:auto;text-decoration:none;font-size:12px;font-weight:700;border-bottom:1px solid var(--butter-deep);padding-bottom:4px}
+.detail{display:grid;grid-template-columns:.65fr 1.35fr;gap:55px;padding:34px 0;border-top:1px solid var(--line)}
+.detail h3{font-size:31px;margin:0}
+.detail p{margin:0 0 13px;color:#55564e}
+.detail .number{font-size:12px;letter-spacing:.15em;color:var(--green);font-weight:bold;margin-bottom:12px}
+.principles{display:grid;grid-template-columns:1fr 1fr;gap:44px}
+.principle-box{padding:28px;background:white;border:1px solid var(--line)}
+.principle-box h3{font-size:28px;margin:0 0 12px}
+.principle-box p{color:var(--muted);margin:0}
+.coalition{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.party{padding:24px 26px;border:1px solid var(--line);background:white}
+.party-top{display:flex;align-items:center;justify-content:space-between;gap:15px}
+.party h3{font-size:26px;margin:0}
+.tag{font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:6px 9px;background:#f3efdf;color:#55513f;white-space:nowrap}
+.party p{color:var(--muted);margin:15px 0 0}
+.party.distant{background:#f8f6f0}
+.team{background:var(--butter);text-align:center}
+.team .section-head{margin:0 auto 35px}
+.names{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.name{background:rgba(255,255,255,.65);padding:14px 22px;font-family:var(--serif);font-size:20px}
+.cta-band{background:var(--green);color:white}
+.cta-inner{max-width:1120px;margin:auto;padding:65px 28px;display:flex;justify-content:space-between;align-items:center;gap:30px}
+.cta-inner h2{font-size:40px;margin:0 0 10px}
+.cta-inner p{color:#e7eadf;margin:0}
+.cta-inner .button{background:var(--butter);color:var(--ink)!important;white-space:nowrap}
+footer{background:#22231f;color:#f6f3e9}
+.footer-inner{max-width:1120px;margin:auto;padding:42px 28px;display:flex;justify-content:space-between;gap:30px;align-items:center}
+footer .brand strong{color:white}footer .brand small{color:#c7c4b9}
+footer p{font-size:12px;color:#c7c4b9;margin:0}
+@media(max-width:850px){
+ nav{display:none;position:absolute;top:72px;left:0;right:0;background:var(--paper);padding:20px 28px;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:18px}
+ nav.open{display:flex}.menu-btn{display:block}.nav-cta{display:none}
+ .hero-inner{grid-template-columns:1fr;padding-top:65px}.hero-art{min-height:270px}
+ .intro-grid,.detail{grid-template-columns:1fr;gap:25px}.values{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:600px){
+ .wrap{padding:65px 22px}.nav{padding:12px 20px}.hero-inner{padding:60px 22px 50px}
+ .cards,.principles,.coalition{grid-template-columns:1fr}
+ .hero-art{min-height:240px}.sun{width:220px;height:220px}
+ .detail{padding:25px 0}.cta-inner,.footer-inner{align-items:flex-start;flex-direction:column}
+ .cta-inner h2{font-size:34px}
+}
+</style>
+</head>
+<body>
+<div class="topline"></div>
+<header>
+ <div class="nav">
+  <a class="brand" href="#home" aria-label="Vooruit Nederland, naar begin">
+   <span class="logo">VN</span><span><strong>Vooruit Nederland</strong><small>Vandaag veranderen, morgen verbeteren</small></span>
+  </a>
+  <nav id="nav">
+   <a href="#visie">Onze visie</a><a href="#standpunten">Standpunten</a><a href="#rechtsstaat">Rechtsstaat</a><a href="#samenwerken">Samenwerken</a><a href="#team">Wie zijn wij?</a>
+  </nav>
+  <a class="nav-cta" href="#standpunten">Waar wij voor staan</a>
+  <button class="menu-btn" id="menuBtn" aria-label="Menu openen">☰</button>
+ </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+ <div class="hero-inner">
+  <div>
+   <div class="eyebrow">Een partij voor de volgende generatie</div>
+   <h1>Vandaag veranderen.<br>Morgen verbeteren.</h1>
+   <p>Een Nederland waarin iedereen kansen krijgt, jongeren worden gehoord en je met vertrouwen aan je toekomst kunt bouwen.</p>
+   <div class="hero-actions"><a class="button" href="#standpunten">Ontdek onze plannen</a><a class="button light" href="#visie">Leer VN kennen</a></div>
+  </div>
+  <div class="hero-art" aria-label="Illustratie van een zonsopkomst met drie mensen">
+   <div class="sun"></div><div class="horizon"></div>
+   <div class="people"><span class="person"></span><span class="person"></span><span class="person"></span></div>
+   <div class="art-label">Samen bouwen aan morgen</div>
+  </div>
+ </div>
+</section>
+
+<section id="visie">
+ <div class="wrap">
+  <div class="section-head"><div class="eyebrow">Waar we in geloven</div><h2>Een eerlijke kans om vooruit te komen.</h2><p class="lead">Politiek wordt te vaak gemaakt voor de volgende verkiezing. Wij willen politiek maken voor de volgende generatie.</p></div>
+  <div class="intro-grid">
+   <div class="intro-copy">
+    <p>Stel je voor dat iedereen in Nederland dezelfde kansen krijgt. Dat jongeren hun dromen kunnen waarmaken, goed onderwijs kunnen volgen en niet jarenlang hoeven te wachten op een betaalbaar huis. Dat is wat wij met Vooruit Nederland (VN) willen bereiken.</p>
+    <p>Wij vinden dat het tijd is voor verandering. Er wordt niet altijd goed geluisterd naar de mensen die met problemen te maken hebben. Vooral jongeren moeten meer kunnen meepraten over hun toekomst. Het gaat tenslotte over hun leven.</p>
+    <p>Wij geloven dat Nederland beter kan worden als we samen dingen veranderen. Iedereen moet de kans krijgen om iets van zijn of haar toekomst te maken.</p>
+   </div>
+   <div class="pullquote">“Iedereen moet de kans krijgen om iets van zijn of haar toekomst te maken.”</div>
+  </div>
+  <div class="values">
+   <div class="value">Gelijke kansen<span>Voor iedereen</span></div>
+   <div class="value">Vrijheid<span>Ruimte om jezelf te zijn</span></div>
+   <div class="value">Solidariteit<span>Omzien naar elkaar</span></div>
+   <div class="value">Verantwoordelijkheid<span>Samen én zelf</span></div>
+   <div class="value">Vooruitgang<span>Blijven verbeteren</span></div>
+  </div>
+ </div>
+</section>
+
+<section class="tint" id="standpunten">
+ <div class="wrap">
+  <div class="section-head"><div class="eyebrow">Onze plannen</div><h2>Dit willen we veranderen.</h2><p class="lead">Een sterke samenleving begint bij mensen die de ruimte krijgen om zich te ontwikkelen en mee te doen.</p></div>
+  <div class="cards">
+   <article class="card"><div class="card-num">01 / ONDERWIJS & WERK</div><h3>Minder prestatiedruk</h3><p>Meer ruimte om te leren, fouten te maken en jezelf te ontwikkelen. Op school én op het werk.</p><a class="text-link" href="#druk">Lees ons standpunt</a></article>
+   <article class="card"><div class="card-num">02 / GEZONDHEID</div><h3>Mentale gezondheid serieus nemen</h3><p>Psychische problemen verdienen aandacht. Hulp moet bereikbaar zijn en problemen moeten eerder worden herkend.</p><a class="text-link" href="#mentaal">Lees ons standpunt</a></article>
+   <article class="card"><div class="card-num">03 / DEMOCRATIE</div><h3>Jongeren laten meepraten</h3><p>Jongeren zijn niet alleen de toekomst. Ze horen ook nu al betrokken te worden bij besluiten.</p><a class="text-link" href="#jongeren">Lees ons standpunt</a></article>
+   <article class="card"><div class="card-num">04 / WONEN</div><h3>Betaalbaar wonen voor iedereen</h3><p>Een veilige en betaalbare woning moet bereikbaar zijn voor starters, studenten en gezinnen.</p><a class="text-link" href="#wonen">Lees ons standpunt</a></article>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="wrap">
+  <div class="section-head"><div class="eyebrow">Standpunten uitgewerkt</div><h2>Van ideeën naar actie.</h2></div>
+  <article class="detail" id="druk"><div><div class="number">STANDPUNT 01</div><h3>Minder prestatiedruk op school en werk</h3></div><div>
+   <p>Op school moeten leerlingen goede cijfers halen, veel opdrachten maken en nadenken over hun vervolgopleiding. Ook op het werk ervaren mensen druk om aan hoge verwachtingen te voldoen. Hierdoor kan de balans tussen school, werk en vrije tijd verdwijnen.</p>
+   <p>Uit HBSC-onderzoek uit 2025 blijkt dat 44,6% van de Nederlandse jongeren tussen de 12 en 16 jaar best veel of heel veel druk ervaart door schoolwerk. Voor VN is dit belangrijk omdat mensen niet alleen op hun prestaties beoordeeld moeten worden. Persoonlijke ontwikkeling en welzijn zijn net zo belangrijk als resultaten.</p>
+   <p>Daarom willen wij dat scholen toetsen en opdrachten beter over het schooljaar verdelen en meer aandacht besteden aan talenten en ontwikkeling. Werkgevers moeten regelmatig onderzoeken hoe werknemers hun werkdruk ervaren en maatregelen nemen wanneer die te hoog wordt. Ook moet er aandacht zijn voor een gezonde balans tussen werk en privé.</p>
+  </div></article>
+  <article class="detail" id="mentaal"><div><div class="number">STANDPUNT 02</div><h3>Meer aandacht voor mentale gezondheid</h3></div><div>
+   <p>Steeds meer mensen ervaren psychische klachten, stress of eenzaamheid. Vooral jongeren en jongvolwassenen kunnen moeite hebben met verwachtingen van school, werk en hun omgeving. Lange wachttijden en een gebrek aan begeleiding kunnen ervoor zorgen dat mensen niet op tijd hulp krijgen.</p>
+   <p>Volgens cijfers van het RIVM had in 2025 ongeveer 31,2% van de leerlingen in het voortgezet onderwijs tussen de 12 en 16 jaar mentale problemen. Dit gaat om vragen over gevoelens, gedrag en problemen met leeftijdgenoten en betekent niet automatisch dat er sprake is van een medische diagnose.</p>
+   <p>VN wil dat scholen voldoende vertrouwenspersonen en professionele ondersteuning hebben. Ook willen we kortere wachttijden in de geestelijke gezondheidszorg, meer aandacht voor preventie en betere samenwerking tussen huisartsen, scholen en andere hulpverleners. Hulp vragen moet normaal zijn en zonder schaamte kunnen.</p>
+  </div></article>
+  <article class="detail" id="jongeren"><div><div class="number">STANDPUNT 03</div><h3>Meer inspraak voor jongeren</h3></div><div>
+   <p>Besluiten over onderwijs, klimaat, wonen en zorg hebben grote gevolgen voor jongeren. Toch wordt hun mening niet altijd meegenomen. Vooral jongeren onder de 18 jaar kunnen nog niet via verkiezingen stemmen.</p>
+   <p>Uit onderzoek van Ipsos I&amp;O in opdracht van UNICEF uit 2026 blijkt dat jongeren de mate waarin zij zich gehoord voelen door de Nederlandse politiek gemiddeld een 4,8 geven. Zes op de tien jongeren vinden dat de regering niet goed naar hen luistert.</p>
+   <p>Daarom willen wij dat iedere gemeente een actieve jongerenraad heeft. Gemeenten moeten adviezen serieus behandelen en uitleggen wat ermee gebeurt. Jongeren moeten ook vaker betrokken worden bij plannen over onderwijs, klimaat en woningbouw. Scholen moeten daarnaast meer aandacht besteden aan democratie en politiek.</p>
+  </div></article>
+  <article class="detail" id="wonen"><div><div class="number">STANDPUNT 04</div><h3>Betaalbaar wonen voor iedereen</h3></div><div>
+   <p>Veel mensen zoeken lang naar een geschikte woning die binnen hun budget past. Vooral starters, studenten en mensen met een lager inkomen hebben moeite om een woning te vinden. Daardoor blijven jongeren soms langer bij hun ouders wonen en kunnen mensen moeilijk zelfstandig een nieuw leven opbouwen.</p>
+   <p>Volgens het CBS werd het woningtekort in Nederland in 2025 geschat op bijna 400.000 woningen, ongeveer 4,8% van de totale woningvoorraad. Een woning is een basisbehoefte en mag geen luxeproduct worden dat alleen bereikbaar is voor mensen met veel geld.</p>
+   <p>VN wil meer sociale huurwoningen en betaalbare koopwoningen. Bij nieuwbouw moeten starters voldoende kansen krijgen. Ook willen we geschikte leegstaande kantoorpanden ombouwen tot woningen en optreden tegen het onnodig lang leeg laten staan van woningen.</p>
+  </div></article>
+ </div>
+</section>
+
+<section class="tint" id="rechtsstaat">
+ <div class="wrap">
+  <div class="section-head"><div class="eyebrow">Een eerlijke en vrije samenleving</div><h2>De rechtsstaat beschermt iedereen.</h2><p class="lead">De overheid moet betrouwbaar zijn, de wet naleven en de rechten van burgers beschermen.</p></div>
+  <div class="principles">
+   <div class="principle-box"><h3>Iedereen gelijk voor de wet</h3><p>Artikel 1 van de Grondwet beschermt gelijke behandeling en verbiedt discriminatie. VN wil dat discriminatie wordt aangepakt, rechtshulp toegankelijk is en niemand boven de wet staat.</p></div>
+   <div class="principle-box"><h3>Een onafhankelijke rechter</h3><p>Rechters moeten zelfstandig en onpartijdig kunnen beslissen, zonder politieke druk. Zij moeten voldoende tijd en middelen hebben om zaken zorgvuldig te behandelen.</p></div>
+   <div class="principle-box"><h3>Minder macht bij de overheid</h3><p>Ook de overheid moet zich aan de wet houden. Het parlement moet de regering kritisch controleren en burgers moeten makkelijker bezwaar kunnen maken tegen overheidsbesluiten.</p></div>
+   <div class="principle-box"><h3>Betere bescherming van grondrechten</h3><p>Vrijheid van meningsuiting, godsdienst en privacy zijn belangrijk. VN wil dat rechters meer mogelijkheden krijgen om wetten aan de Grondwet te toetsen en dat burgers hun rechten kennen.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="samenwerken">
+ <div class="wrap">
+  <div class="section-head"><div class="eyebrow">Samen bereik je meer</div><h2>Open voor samenwerking. Duidelijk over onze waarden.</h2><p class="lead">Geen enkele partij kan alles alleen bereiken. Daarom zoeken we samenwerking waar onze ideeën elkaar versterken.</p></div>
+  <div class="coalition">
+   <article class="party"><div class="party-top"><h3>Progressief Nederland</h3><span class="tag">Mogelijke partner</span></div><p>We zien overeenkomsten op betaalbare woningen, het versterken van de verzorgingsstaat, duurzaamheid en het aanpakken van ongelijkheid. Samenwerking kan bijvoorbeeld gericht zijn op armoede en toegankelijke voorzieningen.</p></article>
+   <article class="party"><div class="party-top"><h3>D66</h3><span class="tag">Mogelijke partner</span></div><p>Vooral op onderwijs, persoonlijke ontwikkeling, jongerenparticipatie, wonen en klimaat zijn er overeenkomsten. Een verschil is dat D66 meer nadruk legt op individuele vrijheid en eigen verantwoordelijkheid.</p></article>
+   <article class="party"><div class="party-top"><h3>Volt</h3><span class="tag">Mogelijke partner</span></div><p>We delen ideeën over vernieuwing, duurzaamheid, gelijke kansen en goed onderwijs. Een mogelijk discussiepunt is hoeveel bevoegdheden Nederland aan Europa moet overdragen.</p></article>
+   <article class="party distant"><div class="party-top"><h3>PVV</h3><span class="tag">Grote verschillen</span></div><p>Onze standpunten liggen ver uit elkaar op het gebied van immigratie, Europa en klimaat. Op losse onderwerpen kan overleg mogelijk zijn, maar een volledige coalitie zou waarschijnlijk veel meningsverschillen opleveren.</p></article>
+  </div>
+ </div>
+</section>
+
+<section class="team" id="team">
+ <div class="wrap">
+  <div class="section-head"><div class="eyebrow">De mensen achter VN</div><h2>Een blik vooruit, samen.</h2><p class="lead">Wij zijn Vooruit Nederland. We willen dat iedereen mee kan doen en invloed heeft op de toekomst van ons land.</p></div>
+  <div class="names"><span class="name">Susan Hermans</span><span class="name">Emily Man</span><span class="name">Fae Mantel</span><span class="name">Amira Mohamed</span></div>
+ </div>
+</section>
+
+<section class="cta-band">
+ <div class="cta-inner"><div><h2>De toekomst begint vandaag.</h2><p>Vooruit Nederland. Vandaag veranderen, morgen verbeteren.</p></div><a class="button" href="#home">Terug naar boven ↑</a></div>
+</section>
+</main>
+
+<footer>
+ <div class="footer-inner">
+  <a class="brand" href="#home"><span class="logo">VN</span><span><strong>Vooruit Nederland</strong><small>Vandaag veranderen, morgen verbeteren</small></span></a>
+  <p>Een schoolproject over politiek en de toekomst van Nederland.</p>
+ </div>
+</footer>
+<script>
+const btn=document.getElementById('menuBtn');
+const nav=document.getElementById('nav');
+btn.addEventListener('click',()=>{nav.classList.toggle('open');btn.setAttribute('aria-expanded',nav.classList.contains('open'));});
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+</script>
+</body>
+</html>
